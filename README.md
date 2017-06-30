@@ -1,7 +1,10 @@
 # 原项目地址：https://github.com/git-lt/isomorphism-koa2-react-antd
 
+
 本项目针对此进行了修改，方便自己使用
 # Koa2 + React + Redux + antd 同构直出探索
+
+#Mac上传测试
 
 
 ## 由来
