@@ -8,6 +8,7 @@ import news from './news'
 import about from './about'
 import todos from './todos'
 import visibilityFilter from './visibilityFilter'
+import env from './env'
 
 export default combineReducers({
   counter,
@@ -15,5 +16,6 @@ export default combineReducers({
   news,
   about,
   todos,
-  visibilityFilter
+  visibilityFilter,
+  env
 })

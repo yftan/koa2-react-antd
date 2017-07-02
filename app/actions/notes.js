@@ -1,9 +1,25 @@
 /**
  * Created by tanyufeng on 2017/6/28.
  */
+import fetch from 'isomorphic-fetch'
 export const ADD_TODO = 'ADD_TODO';
 export const COMPLETE_TODO = 'COMPLETE_TODO';
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
+
+const fetchStateUrl = __SERVER__ ? `http://localhost:${require('../../platforms/common/config').port}/api/notes` : '/api/notes'
+
+export function fetchNotes(state) {
+    return (dispatch) => {
+        dispatch(addTodo())
+        return fetch(fetchStateUrl)
+            .then(res => res.json())
+            .then(data => {
+                dispatch(completeTodo(data))
+            })
+            .catch(e => dispatch(setVisibilityFilter(e)))
+    }
+}
+
 export const VisibilityFilters = {
     SHOW_ALL: 'SHOW_ALL',
     SHOW_COMPLETED: 'SHOW_COMPLETED',

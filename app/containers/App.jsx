@@ -39,10 +39,13 @@ class App extends Component {
           <Menu.Item key="about">
             <Link to="/about" ><Icon type="info-circle-o" />About</Link>
           </Menu.Item>
+          <Menu.Item key="env">
+            <Link to="/env" ><Icon type="book" />Environment</Link>
+          </Menu.Item>
           <Menu.Item key="6">
               <span>
-                <Icon type="file" />
-                <span className="nav-text">File</span>
+                <Icon type="global" />
+                <span className="nav-text">Map</span>
               </span>
           </Menu.Item>
         </Menu>

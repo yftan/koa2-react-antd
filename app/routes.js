@@ -12,6 +12,7 @@ import About from './containers/About'
 import Home from './containers/Home'
 import Counter from './containers/Counter.js'
 import Notes from './containers/Notes'
+import EnvTable from './components/EnvTable'
 
 export default (
 	<Router history={browserHistory}>
@@ -21,6 +22,7 @@ export default (
 	      <Route path="about" component={About} />
 	      <Route path="counter" component={Counter}/>
 		  <Route path="notes" component={Notes}/>
+		  <Route path="env" components={EnvTable}/>
 	    </Route>
 	 </Router>
 )

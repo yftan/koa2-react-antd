@@ -1,20 +1,21 @@
 #!/usr/bin/env node
+
 process.env.NODE_ENV = 'development'
 console.log('Waiting for webpacking ...')
 require('babel-polyfill')
 require('babel-core/register')({
-  plugins: [
-    // 忽略css文件
-    ['babel-plugin-transform-require-ignore', {
-      extensions: ['.less', '.css']
-    }],
-    //js替换
-    ['inline-replace-variables', {
-      __SERVER__: true
-    }]
-  ]
-})
-//返回图片路径
+    plugins: [
+      // 忽略css文件
+      ['babel-plugin-transform-require-ignore', {
+        extensions: ['.less', '.css']
+      }],
+      //js替换
+      ['inline-replace-variables', {
+        __SERVER__: true
+      }]
+    ]
+  })
+  //返回图片路径
 require('asset-require-hook')({
   extensions: ['jpg', 'jpeg', 'png', 'gif', 'svg', 'tif', 'tiff', 'webp'],
   name: '/build/[name].[ext]',
@@ -54,8 +55,8 @@ app.env = 'development'
 app.use(devMiddlewareInstance)
 app.use(hotMiddlewareInstance)
 middlewareRegister(app) // reg middleware
-// error logger
-app.on('error', function (err, ctx) {
+  // error logger
+app.on('error', function(err, ctx) {
   console.log('error occured:', err.stack)
 })
 
@@ -65,8 +66,8 @@ var watcher = chokidar.watch([
   path.join(__dirname, '../app'),
   path.join(__dirname, '../platforms')
 ])
-watcher.on('ready', function () {
-  watcher.on('all', function (e, p) {
+watcher.on('ready', function() {
+  watcher.on('all', function(e, p) {
     console.log("Clearing module cache");
     Object.keys(require.cache).forEach(function(id) {
       if (/[\/\\](app|platforms)[\/\\]/.test(id)) delete require.cache[id];
@@ -74,9 +75,8 @@ watcher.on('ready', function () {
   })
 })
 var isListened = false
-compiler._plugins['after-compile'].push(function (compilation, callback) {
-  callback()
-  !isListened && server.listen(config.port, function () {
+compiler._plugins['after-compile'].push(function(compilation, callback) {
+  callback() !isListened && server.listen(config.port, function() {
     console.log('App started, at port %d, CTRL + C to terminate', config.port)
     isListened = true
   })

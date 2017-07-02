@@ -13,8 +13,8 @@ router.get('/', indexCtrl)
 router.get('/server', serverCtrl)
 router.get('/news', newsCtrl)
 router.get('/about', aboutCtrl)
-router.get('/users',usersCtrl)
-router.get('/notes',notesCtrl)
-router.get('/env',envCtrl)
+router.get('/users', usersCtrl)
+router.get('/notes', notesCtrl)
+router.get('/env', envCtrl)
 
 export default router

@@ -1,37 +1,54 @@
 /**
  * Created by tanyufeng on 2017/6/28.
  */
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
+import React, {
+    Component,
+    PropTypes
+} from 'react';
+import {
+    connect
+} from 'react-redux';
 import {
     addTodo,
     completeTodo,
     setVisibilityFilter,
     VisibilityFilters
 } from '../actions/notes';
-import {fetchServerStateIfNeeded} from '../actions/serverState'
+import {
+    fetchNotes
+} from '../actions/notes'
 import AddTodo from '../components/AddTodo';
 import TodoList from '../components/TodoList';
 import Footer from '../components/Footer';
 class Notes extends Component {
-    // static fetch (state, dispatch) {
+    constructor() {
+        super()
+    }
+
+    // static fetch(state, dispatch) {
     //     const fetchTasks = []
     //     fetchTasks.push(
-    //         dispatch(fetchServerStateIfNeeded(state))
+    //         dispatch(fetchNotes(state))
     //     )
     //     return fetchTasks
     // }
-    //
+
     // // 前端在组件挂载后，要判断一下这个页面的状态数据，有没有初始化，如果没有，应该加载一次
     // // 避免在前端路由跳转后，新的页面没有数据而报错
-    // componentDidMount () {
-    //     const { loaded } = this.props
-    //     if ( !loaded ) {
+    // componentDidMount() {
+    //     const {
+    //         loaded
+    //     } = this.props
+    //     if (!loaded) {
     //         this.constructor.fetch(this.props, this.props.dispatch)
     //     }
     // }
     render() {
-        const { dispatch, visibleTodos, visibilityFilter } = this.props;
+        const {
+            dispatch,
+            visibleTodos,
+            visibilityFilter
+        } = this.props;
         return (
             <div>
                 <AddTodo
@@ -62,6 +79,7 @@ Notes.propTypes = {
         'SHOW_ACTIVE'
     ]).isRequired
 };
+
 function selectTodos(todos, filter) {
     switch (filter) {
         case VisibilityFilters.SHOW_ALL:
