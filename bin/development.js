@@ -22,10 +22,10 @@ require('asset-require-hook')({
   limit: 10000
 })
 
-var Koa = require('koa');
-var app = new Koa();
-var path = require('path');
-var middlewareRegister = require('../platforms/server/middlewareRegister');
+var Koa = require('koa')
+var app = new Koa()
+var path = require('path')
+var middlewareRegister = require('../platforms/server/middlewareRegister')
 var webpack = require('webpack')
 var KWM = require('koa-webpack-middleware')
 var devMiddleware = KWM.devMiddleware
@@ -76,7 +76,8 @@ watcher.on('ready', function() {
 })
 var isListened = false
 compiler._plugins['after-compile'].push(function(compilation, callback) {
-  callback() !isListened && server.listen(config.port, function() {
+  callback()
+  !isListened && server.listen(config.port, function() {
     console.log('App started, at port %d, CTRL + C to terminate', config.port)
     isListened = true
   })
