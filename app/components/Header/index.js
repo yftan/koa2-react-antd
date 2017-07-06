@@ -1,30 +1,31 @@
-import React from 'react'
-import { Row, Col, Icon, Menu, Dropdown } from 'antd'
-import './index.less'
-import { Link } from 'react-router'
+import React, { PropTypes } from 'react';
 
-const SubMenu = Menu.SubMenu;
+class Header extends React.Component {
 
-export default class Header extends React.Component {
-  constructor () {
-    super()
-  }
-  render () {
-    // const {user} = this.props
+  render() {
     return (
-      <div className='ant-layout-header'>
-        <Menu className="header-menu" mode="horizontal">
-          <SubMenu>
-            <Menu.Item key="setting:1">选项1</Menu.Item>
-            <Menu.Item key="setting:2">选项2</Menu.Item>
-            <Menu.Divider />
-            <Menu.Item key="setting:3">注销</Menu.Item>
-          </SubMenu>
-          <Menu.Item key="mail">
-            <Icon type="question" />帮助
-          </Menu.Item>
-        </Menu>
-      </div>
+          <div id="header" className="header navbar navbar-default navbar-fixed-top">
+			    <div className="container-fluid">
+				    <div className="navbar-header">
+					    <a href="javascript:void(0)" className="navbar-brand"><span className="navbar-logo"></span> Color Admin</a>
+					    <button type="button" className="navbar-toggle" data-click="sidebar-toggled">
+						    <span className="icon-bar"></span>
+						    <span className="icon-bar"></span>
+						    <span className="icon-bar"></span>
+					    </button>
+				    </div>
+
+						<ul className="nav navbar-nav navbar-right">
+							<li className="dropdown navbar-user">
+								<a href="/auth/logout" className="dropdown-toggle" data-toggle="dropdown">
+									<span className="hidden-xs">LOGOUT</span> 
+								</a>			
+							</li>
+						</ul>
+			    </div>
+		    </div>
     )
   }
 }
+
+export default Header
