@@ -19,7 +19,7 @@ import {
 } from '../actions/notes'
 import AddTodo from '../components/AddTodo';
 import TodoList from '../components/TodoList';
-import Footer from '../components/Footer';
+import Footer from '../components/NoteFooter';
 class Notes extends Component {
     constructor() {
         super()
