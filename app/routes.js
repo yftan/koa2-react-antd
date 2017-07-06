@@ -13,16 +13,19 @@ import Home from './containers/Home'
 import Counter from './containers/Counter.js'
 import Notes from './containers/Notes'
 import EnvTable from './components/EnvTable'
+import DashBoard from './containers/DashboardContainer'
 
 export default (
 	<Router history={browserHistory}>
 	    <Route path="/" component={App}>
-	      <IndexRoute component={Home}/>
+	      {/*<IndexRoute component={Home}/>*/}
+		  <IndexRoute component={DashBoard}/>
 	      <Route path="news" component={News} />
 	      <Route path="about" component={About} />
 	      <Route path="counter" component={Counter}/>
 		  <Route path="notes" component={Notes}/>
-		  <Route path="env" components={EnvTable}/>
+		  <Route path="env" component={EnvTable}/>
+		  <Route path="dashboard" component={DashBoard}/>
 	    </Route>
 	 </Router>
 )
