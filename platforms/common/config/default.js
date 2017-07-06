@@ -15,5 +15,6 @@ export default {
     password: '',
     database: 'main',
     storage: 'path/to/db.sqlite'
-  }
+  },
+  mongodb:"mongodb://127.0.0.1:27017/GeoModeling"
 }

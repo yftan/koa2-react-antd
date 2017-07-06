@@ -9,7 +9,7 @@ import about from './about'
 import todos from './todos'
 import visibilityFilter from './visibilityFilter'
 import env from './env'
-
+import summary from './summary'
 export default combineReducers({
   counter,
   server,
@@ -17,5 +17,6 @@ export default combineReducers({
   about,
   todos,
   visibilityFilter,
-  env
+  env,
+  summary
 })
