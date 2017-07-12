@@ -8,8 +8,7 @@ import notesCtrl from '../controllers/notesCtrl'
 import envCtrl from '../controllers/envCtrl'
 import summaryCtrl from '../controllers/summaryCtrl'
 import linechartCtrl from '../controllers/linechartCtrl'
-import uvCtrl from '../controllers/uvCtrl'
-import pvCtrl from '../controllers/pvCtrl'
+import envControlls from '../controllers/env'
 const router = new Router()
 router.prefix('/api')
 
@@ -19,10 +18,30 @@ router.get('/news', newsCtrl)
 router.get('/about', aboutCtrl)
 router.get('/users', usersCtrl)
 router.get('/notes', notesCtrl)
-router.get('/env', envCtrl)
 router.get('/summary',summaryCtrl)
 router.get('/linechart',linechartCtrl)
-router.get('/export/uv',uvCtrl)
-router.get('/export/pv',pvCtrl)
+
+/*==============================Env Router=========================================*/
+router.get('/env', envCtrl)
+// GET /api/envs
+router.get('/envs',envControlls.find)
+
+// POST /api/envs
+// This route is protected, call POST /api/authenticate to get the token
+router.post('/envs/add',envControlls.add)
+
+// GET /api/envs/id
+// This route is protected, call POST /api/authenticate to get the token
+router.get('/envs/:id',envControlls.findById)
+
+// PUT /api/envs/id
+// This route is protected, call POST /api/authenticate to get the token
+router.put('/envs/:id', envControlls.update)
+
+// DELETE /api/envs/id
+// This route is protected, call POST /api/authenticate to get the token
+router.delete('/envs/:id',envControlls.delete)
+/*===============================Env Router End===================================*/
+
 
 export default router
