@@ -70,20 +70,22 @@ export default class EnvTable extends React.Component {
     }
     onSearch = () => {
         const { searchText } = this.state;
+        console.log(searchText)
         const reg = new RegExp(searchText, 'gi');
+        const data = this.props.envConfig
         this.setState({
             filterDropdownVisible: false,
             filtered: !!searchText,
             data: data.map((record) => {
-                const match = record.packageName.match(reg);
+                const match = record.Package.match(reg);
                 if (!match) {
                     return null;
                 }
                 return {
                     ...record,
-                    packageName: (
+                    Package: (
                         <span>
-              {record.packageName.split(reg).map((text, i) => (
+              {record.Package.split(reg).map((text, i) => (
                   i > 0 ? [<span className="highlight">{match[0]}</span>, text] : text
               ))}
             </span>
@@ -93,13 +95,14 @@ export default class EnvTable extends React.Component {
         });
     }
     render() {
-        console.log("=========EnvTable=========");
-        console.log(this.props.envConfig);
+        //console.log("=========EnvTable=========");
+        //console.log(this.props.envConfig);
         const envData = this.props.envConfig;
         const columns = [{
             title: 'Package',
-            dataIndex: 'packageName',
+            dataIndex: 'Package',
             key: 'packageName',
+            width:'20%',
             filterDropdown: (
                 <div className="custom-filter-dropdown">
                     <Input
@@ -121,20 +124,19 @@ export default class EnvTable extends React.Component {
             },
         }, {
             title: 'Version',
-            dataIndex: 'version',
+            dataIndex: 'Version',
             key: 'version',
+            width:'20%',
         }, {
             title: 'Depends',
-            dataIndex: 'denpends',
-            key: 'denpends',
-        },{
-            title: 'Description',
-            dataIndex: 'description',
-            key: 'description',
+            dataIndex: 'Depends',
+            key: 'depends',
+            width:'50%',
         },{
             title: 'Linux',
-            dataIndex: 'address',
-            key: 'address',
+            dataIndex: 'Origin',
+            key: 'origin',
+            width:'10%',
             filters: [{
                 text: 'Ubuntu',
                 value: 'Ubuntu',

@@ -93,9 +93,9 @@ class Trend extends React.Component {
 
 
   render() {
-    console.log("=======Components Trend==========")
-	console.log(this.props)
-	console.log("=======Components Trend===========")
+    // console.log("=======Components Trend==========")
+	// console.log(this.props)
+	// console.log("=======Components Trend===========")
     if(this.props.chartShow) {
         return (
             <div className="row">
