@@ -10,7 +10,7 @@ export default (state = {}, action) => {
       return {...state
       }
     case ENV_STATE_SUCCEED:
-      console.log(action.data)
+      // console.log(action.data)
       const _data = {
         envConfig: action.data,
         loaded: true

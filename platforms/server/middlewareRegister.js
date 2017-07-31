@@ -8,6 +8,15 @@ import convert from 'koa-convert'
 import Bodyparser from 'koa-bodyparser'
 import router from './routes'
 import config from '../common/config'
+import mongoose from 'mongoose'
+import configDeafault from '../common/config/default'
+
+console.log("mongodb数据库连接")
+mongoose.connect(configDeafault.mongodburl);
+mongoose.connection.on('error', console.error);
+
+
+
 const bodyparser = Bodyparser()
 const templatePath = path.join(__dirname, './views')
 

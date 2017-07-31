@@ -1,11 +1,6 @@
 import Koa from 'koa'
 import middlewareRegister from './middlewareRegister'
-import mongoose from 'mongoose'
-import {mongodb} from '../common/config'
 
-
-mongoose.connect(mongodb);
-mongoose.on(error,console.error);
 
 const app = new Koa()
 app.env = 'production'

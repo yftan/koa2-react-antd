@@ -30,8 +30,8 @@ class Home extends Component{
 
   render(){
     const {id="", username="", mobile="", email="", county="" } = this.props.serverConfig || {};
-    console.log("========Home containers=========");
-    console.log(this.props);
+    // console.log("========Home containers=========");
+    // console.log(this.props);
     return (
       <div>
         <h3>首页</h3>
