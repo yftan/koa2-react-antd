@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style type="text/css">
+	    #allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	  </style>
     <title><%= title %></title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
@@ -11,6 +14,7 @@
     <link href="//mirror.tarax.cn/coloradmin/assets/css/style.min.css" rel="stylesheet" />
     <link href="//mirror.tarax.cn/coloradmin/assets/css/style-responsive.css" rel="stylesheet" />
     <link href="//mirror.tarax.cn/coloradmin/assets/css/theme/default.css" rel="stylesheet" id="theme" />
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=XO7t4rvKPYADrDrH2voeyIddMPVEyDra" type="text/javascript"></script>
     <% if (!dev) { %>
     <link rel='stylesheet' href='/build/all.min.css' />
     <% } %>

@@ -42,11 +42,8 @@ class App extends Component {
           <Menu.Item key="env">
             <Link to="/env" ><Icon type="book" />Environment</Link>
           </Menu.Item>
-          <Menu.Item key="6">
-              <span>
-                <Icon type="global" />
-                <span className="nav-text">Map</span>
-              </span>
+          <Menu.Item key="map">
+            <Link to='/map'><Icon type="global"/>Map</Link>
           </Menu.Item>
         </Menu>
       </Header>

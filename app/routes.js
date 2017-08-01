@@ -14,6 +14,7 @@ import Counter from './containers/Counter.js'
 import Notes from './containers/Notes'
 import EnvTable from './components/EnvTable'
 import DashBoard from './containers/DashboardContainer'
+import BDMap from './containers/BDMap'
 
 export default (
 	<Router history={browserHistory}>
@@ -26,6 +27,7 @@ export default (
 		  <Route path="notes" component={Notes}/>
 		  <Route path="env" component={EnvTable}/>
 		  <Route path="dashboard" component={DashBoard}/>
+		  <Route path='map' component={BDMap}/> 
 	    </Route>
 	 </Router>
 )
