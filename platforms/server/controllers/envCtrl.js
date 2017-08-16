@@ -2,7 +2,9 @@
  * Created by tanyufeng on 2017/6/29.
  */
 import Env from '../models/EnvModel'
+//import {EnvReadLine} from '../utils/envRead'
 export default async(ctx, next) => {
+	//EnvReadLine("123")
 	ctx.body = await Env.find()
 	// ctx.body = [{
 	// 	key: '1',

@@ -20,11 +20,11 @@ const EnvSchema = new Schema({
         type: String,
         require: false
     }
-});
+},{collection:'Env'});
 
-if(mongoose.model.Env){
-    Env =  mongoose.model('Env') 
-}else{
-    Env = mongoose.model('Env',EnvSchema) 
-}
+// if(mongoose.model.Env){
+//     Env =  mongoose.model('Env') 
+// }else{
+    Env =  mongoose.model('Env',EnvSchema) 
+// }
 export default Env

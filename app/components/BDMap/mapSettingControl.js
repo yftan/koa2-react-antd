@@ -8,7 +8,7 @@ SettingControl.prototype = new BMap.Control();
 
 SettingControl.prototype.initialize = function(map){
     var dataimg = document.createElement('img');
-    dataimg.src = "/public/images/settings.png";
+    dataimg.src = "/images/settings.png";
     dataimg.onclick = (event)=>{
         $('#modal_setting').modal('show');
     };

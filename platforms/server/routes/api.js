@@ -1,4 +1,5 @@
 import Router from 'koa-router'
+const koaBody  = require('koa-body')({multipart:true})
 import indexCtrl from '../controllers/indexCtrl'
 import usersCtrl from '../controllers/usersCtrl'
 import serverCtrl from '../controllers/serverCtrl'
@@ -9,6 +10,8 @@ import envCtrl from '../controllers/envCtrl'
 import summaryCtrl from '../controllers/summaryCtrl'
 import linechartCtrl from '../controllers/linechartCtrl'
 import envControlls from '../controllers/env'
+import jobControlls from '../controllers/jobControllers'
+import riverPtInfoControllers from '../controllers/RiverPtInfoControllers'
 const router = new Router()
 router.prefix('/api')
 
@@ -43,5 +46,18 @@ router.put('/envs/:id', envControlls.update)
 router.delete('/envs/:id',envControlls.delete)
 /*===============================Env Router End===================================*/
 
+/*===============================Job Router Start=================================*/
+router.get('/jobs/all',jobControlls.find)
+
+router.get('/jobs/:j_num',jobControlls.getByNum)
+
+router.delete('/jobs/:j_num',jobControlls.delete)
+
+router.post('/jobs',jobControlls.add)
+/*===============================Job Router End===================================*/
+
+/*===============================RiverPtInfo Router Start=================================*/
+router.post('/riverptinfo',koaBody,riverPtInfoControllers.add)
+/*===============================RiverPtInfo Router End=================================*/
 
 export default router

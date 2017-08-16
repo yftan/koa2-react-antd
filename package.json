@@ -29,6 +29,7 @@
     "fs": "^0.0.1-security",
     "isomorphic-fetch": "^2.2.1",
     "koa": "^2.0.0",
+    "koa-body": "^2.3.0",
     "koa-bodyparser": "^2.0.1",
     "koa-convert": "^1.2.0",
     "koa-json": "^1.1.1",
@@ -49,7 +50,8 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.4.0",
     "redux": "^3.5.2",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
     "asset-require-hook": "^1.0.2",
