@@ -22,9 +22,8 @@ const EnvSchema = new Schema({
     }
 },{collection:'Env'});
 
-// if(mongoose.model.Env){
-//     Env =  mongoose.model('Env') 
-// }else{
-    Env =  mongoose.model('Env',EnvSchema) 
-// }
+//注意此处是mongoose.models要带复数的
+Env = mongoose.models.Env || mongoose.model('Env', EnvSchema);
+// Env =  mongoose.model('Env',EnvSchema) 
+
 export default Env

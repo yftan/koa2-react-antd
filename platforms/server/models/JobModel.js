@@ -12,7 +12,10 @@ const JobSchema = new Schema({
 },{collection : 'Job'});
 
 
-Job = mongoose.model('Job',JobSchema)
+Job = mongoose.models.Job || mongoose.model('Job',JobSchema);
+
 
 export default Job
+
+
 

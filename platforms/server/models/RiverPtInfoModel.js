@@ -27,6 +27,6 @@ const RiverPtInfoSchema =  new Schema({
     rt_note : String
 },{collection:'RiverPtInfo'});
 
-RiverPtInfo = mongoose.model('RiverPtInfo',RiverPtInfoSchema)
+RiverPtInfo = mongoose.models.RiverPtInfo || mongoose.model('RiverPtInfo',RiverPtInfoSchema);
 
 export default RiverPtInfo;
